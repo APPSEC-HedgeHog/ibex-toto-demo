@@ -1,6 +1,6 @@
 from git import Repo
 
-repo = Repo('.')
+repo = Repo('../')
 commits = list(repo.iter_commits('bsl'))
 
 f = open('bsl.log', 'w')
