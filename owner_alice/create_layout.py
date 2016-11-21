@@ -63,7 +63,18 @@ def main():
 
         ],
         "run": "tar xfz foo.tar.gz",
-      }],
+      },
+      {"name": "verify_bsl",
+      "material_matchrules": [
+            ["CREATE", "*"],
+      ],
+      "product_matchrules": [
+            ["MATCH", "PRODUCT", "bsl.json", "AS", "bsl.json", "FROM", "after-vcs"],
+            ["CREATE", "*"],
+      ],
+      "run": "python verify_bsl.py",
+      }, 
+      ],
     "signatures": []
   })
 
