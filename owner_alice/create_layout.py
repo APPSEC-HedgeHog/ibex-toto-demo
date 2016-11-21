@@ -35,6 +35,7 @@ def main():
         "name": "package",
         "material_matchrules": [
             ["MATCH", "PRODUCT", "foo.py", "FROM", "write-code"],
+            ["MATCH", "PRODUCT", "bsl.log", "FROM", "after-vcs"],
         ],
         "product_matchrules": [
             ["CREATE", "foo.tar.gz"],
