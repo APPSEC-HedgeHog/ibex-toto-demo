@@ -13,7 +13,6 @@ for i in commits:
     meta['body']=content1.replace(content2,"")
     jsonArr.append(json.dumps(meta))
   content1=content2
-  print "for commit: "+i
   meta['hexsha']=str(i.hexsha)
   meta['author_name']=str(i.author.name)
   meta['authored_date']=str(i.authored_date)

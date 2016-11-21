@@ -27,7 +27,7 @@ def main():
       {
         "name": "after-vcs",
         "material_matchrules": [],
-        "product_matchrules": [["CREATE", "bsl.log"]],
+        "product_matchrules": [["CREATE", "bsl.json"]],
         "pubkeys": [key_steve["keyid"]],
         "expected_command": "python parse_bsl.py",
       },
