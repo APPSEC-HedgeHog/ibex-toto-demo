@@ -1,4 +1,4 @@
-nsert
+yytnsert
 t add foo.py
 git commit -m "my commit "
 CinsC
