@@ -16,4 +16,5 @@ if __name__ == '__main__':
       print('ERROR: Committer name {} for commit {} is not in an allowed committer'
             .format(r['committer_name'], idx))
       sys.exit(1)
+  print('All commiters verification passed')
   sys.exit(0)
