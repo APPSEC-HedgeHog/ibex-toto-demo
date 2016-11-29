@@ -17,7 +17,13 @@ def main():
         key_carl["keyid"]: key_carl,
 	key_steve["keyid"]: key_steve,
     },
-    "steps": [
+    "steps": [{
+        "name": "write-code",
+        "material_matchrules": [],
+        "product_matchrules": [["CREATE", "foo.py"]],
+        "pubkeys": [key_bob["keyid"]],
+        "expected_command": "vi",
+      },
       {
         "name": "after-vcs",
         "material_matchrules": [],
@@ -28,6 +34,7 @@ def main():
       {
         "name": "package",
         "material_matchrules": [
+            ["MATCH", "PRODUCT", "foo.py", "FROM", "write-code"],
         ],
         "product_matchrules": [
             ["CREATE", "foo.tar.gz"],
@@ -49,6 +56,8 @@ def main():
             ["CREATE", "*"],
         ],
         "product_matchrules": [
+            ["MATCH", "PRODUCT", "foo.py", "AS", "foo.py",
+                "FROM", "write-code"],
             # FIXME: See material_matchrules above
             ["CREATE", "*"],
 
