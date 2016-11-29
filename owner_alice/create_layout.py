@@ -48,7 +48,7 @@ def main():
             # irrelevant files.
             ["CREATE", "*"],
         ],
-        "product_matchrules": 
+        "product_matchrules": [
             # FIXME: See material_matchrules above
             ["CREATE", "*"],
 
