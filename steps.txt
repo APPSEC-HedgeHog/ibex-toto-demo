@@ -2,6 +2,7 @@ git clone -b master https://github.com/pkmoore/ibex-toto-demo.git
 cd ibex-toto-demo/
 git push origin --delete bsl
 export SIMPLE_SETTINGS=toto.settings
+./git-securefetch
 
 cd owner_alice
 python create_layout.py
@@ -11,11 +12,13 @@ toto-run.py --step-name write-code --products foo.py --key bob -- vi foo.py
 
 git add foo.py
 git commit -m "my commit "
-../git-securepush
+cd ..
+./git-securepush
+cd functionary_bob
 cp foo.py ../functionary_carl/
 
 cd ../functionary_steve
-toto-run.py --step-name after-vcs --products bsl.json --key steve -- python parse_bsl.py
+toto-run.py --step-name after-vcs --products bsl.json --key steve -- parsebsl.py
 
 cd ../functionary_carl
 toto-run.py --step-name package --materials foo.py --products foo.tar.gz --key carl -- tar zcvf foo.tar.gz foo.py
