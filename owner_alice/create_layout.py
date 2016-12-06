@@ -29,7 +29,7 @@ def main():
         "material_matchrules": [],
         "product_matchrules": [["CREATE", "bsl.json"]],
         "pubkeys": [key_steve["keyid"]],
-        "expected_command": "python parse_bsl.py",
+        "expected_command": "parsebsl.py",
       },
       {
         "name": "package",
@@ -72,7 +72,7 @@ def main():
             ["MATCH", "PRODUCT", "bsl.json", "AS", "bsl.json", "FROM", "after-vcs"],
             ["CREATE", "*"],
       ],
-      "run": "python verify_bsl.py",
+      "run": "verifybsl.py",
       }, 
       ],
     "signatures": []
